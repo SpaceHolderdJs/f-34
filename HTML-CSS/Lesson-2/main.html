@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .red {
+        background: darkred;
+        color: white;
+      }
+
+      .green {
+        background: lightseagreen;
+        color: white;
+      }
+      /* селектор за тегом */
+      section {
+        background: lightgrey;
+      }
+
+      /* селектор за класом  */
+      .card {
+        background: darkslategrey;
+        color: white;
+      }
+
+      .div-class {
+        border: 2px dashed grey;
+      }
+
+      /* селектор за id */
+      #paragraph-element {
+        color: brown;
+      }
+
+      #h3-element {
+        color: darkgoldenrod;
+      }
+
+      .button,
+      .input,
+      #h3-element {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div-element" class="div-class">
+      <p id="paragraph-element">Frontend</p>
+    </div>
+    <h3 id="h3-element">Hello</h3>
+
+    <section>
+      <div class="card">
+        <h4>Card-1</h4>
+        <p>Card text...</p>
+      </div>
+
+      <div class="card">
+        <h4>Card-2</h4>
+        <p>Card text...</p>
+      </div>
+
+      <div class="card">
+        <h4>Card-3</h4>
+        <p>Card text...</p>
+      </div>
+    </section>
+
+    <div class="card">
+      <h1>Big card</h1>
+    </div>
+
+    <button class="button">Button</button>
+    <button class="button red">Red button</button>
+    <button class="button green">Green button</button>
+
+    <br />
+
+    <input type="text" class="input" placeholder="Enter text" />
+    <input type="email" class="input" placeholder="Enter email" />
+    <input type="password" class="input" placeholder="Enter password" />
+
+    <br />
+    
+    <input type="checkbox" class="input" />
+    <input type="range" class="input" />
+    <input type="radio" class="input" />
+    <input type="color" class="input" />
+    <input type="date" class="input" />
+
+    <textarea class="input"></textarea>
+
+    <select class="input">
+        <option>Member-1</option>
+        <option>Member-2</option>
+        <option>Member-3</option>
+    </select>
+
+
+
+  </body>
+</html>
