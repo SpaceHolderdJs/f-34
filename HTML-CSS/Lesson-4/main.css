@@ -1,0 +1,67 @@
+* {
+    font-size: 40px;
+}
+
+body {
+    background: lightgrey;
+}
+
+
+sup {
+    color: darkred;
+}
+
+.bold {
+    /* Жирність шрифта */
+    font-weight: 800;
+    color: violet; 
+}
+
+.cursive {
+    /* Тип тексту (курсив) */
+    font-style: italic;
+    color: cadetblue;
+}
+
+.dashed {
+    text-decoration: dashed;
+}
+
+.dotted {
+    text-decoration: dotted;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.waved {
+    text-decoration: wavy;
+}
+
+.sup {
+    margin-top: -50px;
+}
+
+.sub {
+    margin-top: 10px;
+}
+
+/* ____________________________ */
+
+
+.wrapper p {
+    color: blue;
+}
+
+.wrapper p span {
+    color:brown;
+}
+
+.custom {
+    color:aqua;
+}
+
+p {
+    color: red
+}

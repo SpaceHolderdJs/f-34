@@ -91,3 +91,31 @@ textarea {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
 }
+
+footer {
+    background: #14293E;
+    padding: 40px;
+    margin-top: 100px;
+}
+
+footer .footer-column {
+    width: 50%;
+    display: inline-block;
+}
+
+footer .footer-column a {
+    font-size: 25px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
+footer img {
+   margin-top: 20px; 
+}
+
+footer .license {
+    color: lightskyblue;
+    font-size: 20px;
+}

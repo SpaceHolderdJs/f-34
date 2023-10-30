@@ -1,0 +1,21 @@
+h1 {
+    color: white;
+}
+
+main {
+    width: 100%;
+}
+
+main .article-card {
+    background: #14293E;
+    width: 40%;
+
+}
+
+main .article-card div {
+    color: white;
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+}
+
