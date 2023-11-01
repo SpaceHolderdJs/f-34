@@ -32,6 +32,52 @@ a {
     height: auto;
 }
 
+#pricing-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #14293E; 
+    padding-top: 20px;
+    padding-bottom: 20px;  
+}
+
+#pricing-section table {
+    width: 70%;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#pricing-section table .hidden {
+    /* display: none; */
+    visibility: hidden;
+}
+
+#pricing-section table td {
+    height: 35px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#pricing-section table .first-td {
+    text-align: left;
+}
+
+#pricing-section table .light-grey > td {
+    background: lightgray;
+}
+
+#pricing-section table .dark-grey > td {
+    background: darkgray;
+}
+
+#pricing-section table th {
+    background: lightskyblue;
+    height: 70px;
+    font-size: 40px;
+    color: #14293E;
+}
+
 #contact-section {
     width: 100%;
     color: white;

@@ -8,8 +8,10 @@ main {
 
 main .article-card {
     background: #14293E;
-    width: 40%;
-
+    width: 70%;
+    height: 200px;
+    display: flex;
+    align-items: center;
 }
 
 main .article-card div {
@@ -19,3 +21,16 @@ main .article-card div {
     padding: 10px;
 }
 
+main .article-card div h4 {
+    margin: 5px;
+}
+
+main .article-card div p {
+    margin: 5px;
+}
+
+main .article-card img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+}
