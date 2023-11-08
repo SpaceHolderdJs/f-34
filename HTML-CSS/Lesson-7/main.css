@@ -1,0 +1,96 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.wrapper .square {
+    background: darkred;
+}
+
+.square {
+    width: 250px;
+    height: 250px;
+    /* margin: 20px 10px; */
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+.wrapper-2 {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.wrapper-2 .square {
+    background: lightslategray;
+}
+
+.wrapper-3 {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.wrapper-3 .square {
+    background: rebeccapurple;
+}
+
+.wrapper-4 {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+
+    /* justify-content: flex-start; */
+    /* justify-content: center; */
+    justify-content: flex-end;
+}
+
+.wrapper-4 .square {
+    background: aquamarine;
+}
+
+.wrapper-5 {
+    width: 100%;
+    height: 100vh;
+    background: grey;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+
+    justify-content: flex-end;
+}
+
+.wrapper-5 .square {
+    width: 100px;
+    height: 100px;
+    background: gold;
+}
+
+.wrapper-6 {
+    width: 100%;
+    height: 100vh;
+    background: grey;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+
+    /* Vertical centralization */
+    align-items: center;
+
+    /* Horizontal centralization */
+    justify-content: center;
+}
+
+.wrapper-6 .square {
+    width: 100px;
+    height: 100px;
+    background: chocolate;
+}

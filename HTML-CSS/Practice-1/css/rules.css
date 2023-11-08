@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #212121;
+}
+
+/* buttons */
+button {
+    color: white;
+    padding: 18px 36px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    /* ovveriding */
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+button.primary {
+    background: #0076F4;
+} 
+
+button.secondary {
+    background: transparent;
+    border: 1px solid rgba(248, 250, 251, 0.10);
+}
+
+/* links */
+a {
+    color: #B4BCD0;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}

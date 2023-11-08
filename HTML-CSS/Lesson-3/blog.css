@@ -50,6 +50,7 @@ main .article-card img {
     main .article-card {
         width: 90%;
         flex-direction: column;
+        height: auto;
     }
 }
 
