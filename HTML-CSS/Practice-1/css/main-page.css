@@ -1,0 +1,22 @@
+.client-section {
+  width: 100%;
+}
+
+.client-section p {
+  color: #fff;
+  text-align: center;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31px;
+}
+
+.client-section .clients-wrapper {
+    width: 100%;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(6, minmax(80px, 175px));
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
