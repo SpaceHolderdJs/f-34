@@ -1,0 +1,130 @@
+:root {
+    font-size: 16px;
+    /* gaps */
+    --margin-s: 10px;
+    --margin-m: 25px;
+    --margin-l: 30px;
+    --margin-xl: 50px;
+    /* background */
+    --background-color-light: #f05a34;
+    --background-gradient: linear-gradient(30deg, purple, grey, pink);
+}
+
+div {
+    background: var(--background-color-light);
+    margin: 10px;
+}
+
+article {
+    --article: 10px;
+    font-size: 50px;
+}
+
+.square-1 {
+    width: 100px;
+    /* height: 100px; */
+    aspect-ratio: 1/1;
+    margin: var(--margin-m);
+    display: flex;
+    gap: var(--margin-l);
+    background: var(--background-gradient);
+}
+
+.square-2 {
+    width: 70%;
+    /* height: 50%; */
+    aspect-ratio: 16/9;
+}
+
+.square-3 {
+    width: 10rem;
+    height: 10rem;
+    border: 1rem solid black;
+    /* border-radius: 2rem; */
+    border-radius: 32px;
+    margin: 2rem;
+}
+
+.square-4 {
+    width: 10em;
+    height: 10em;
+    padding: var(--article);
+}
+
+.square-5 {
+    width: 100vw;
+    height: 100vw;
+}
+
+button {
+    background: black;
+    color: white;
+    font-size: 20px;
+    width: 50%;
+    height: 100px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+/* main button:hover {
+    background: darkred;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 0.5px black;
+} */
+
+input {
+    font-size: 30px;
+}
+
+input:hover {
+    background: greenyellow;
+}
+
+input:focus {
+    background: darkkhaki;
+}
+
+input:active {
+    background: darkolivegreen;
+}
+
+button:focus {
+    background: darkred;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+ul {
+    font-size: 30px;
+}
+
+ul li:nth-child(even) {
+    background: skyblue;
+}
+
+ul li:nth-child(odd) {
+    background: darkgrey;
+}
+ 
+ul li:nth-last-child(1) {
+    background: darkorange;
+}
+
+ul li:nth-child(6n) {
+    background: darkorange;
+}
+
+aside:not(.aside) {
+    background: firebrick;
+}
+
+body *:not(p) {
+    color: slategrey
+}
