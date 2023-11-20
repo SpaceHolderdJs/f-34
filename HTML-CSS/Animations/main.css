@@ -1,0 +1,86 @@
+@keyframes colors-animation {
+    from {
+        width: 10%;
+        height: 10vh;
+        background: black;
+    }
+
+    to {
+        width: 100%;
+        height: 100vh;
+        background: grey;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    height: 50vh;
+    /* animation: 2s linear infinite colors-animation; */
+}
+
+@keyframes movement {
+    from {
+        left: 50%;
+        top: 50%;
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        left: calc(100% - 100px);
+        top: calc(100% - 100px);
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes pulsing {
+    0% {
+        background: black;
+        transform: scale(1) rotateZ(0deg);
+        border-radius: 0px;
+        filter: blur(0px);
+    }
+
+    50% {
+        background: darkgoldenrod;
+        transform: scale(1.5) rotateZ(95deg);
+        border-radius: 50%;
+        filter: blur(20px);
+    }
+
+    100% {
+        background: black;
+        transform: scale(1) rotateZ(0deg);
+        border-radius: 0px;
+        filter: blur(0px);
+    }
+}
+
+
+.square {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: violet;
+    animation: 5s ease-in-out infinite movement;
+}
+
+.square-2 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background: black;
+    animation: 5s linear infinite movement;
+}
+
+.square-3 {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    left: 45%;
+    top: 45%;
+    animation: 5s linear infinite pulsing;
+}
+
+img {
+    animation: 5s linear infinite pulsing;
+}
