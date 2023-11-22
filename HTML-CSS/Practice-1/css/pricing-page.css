@@ -1,0 +1,81 @@
+.title-section {
+  width: 100%;
+}
+
+.title-section h1 {
+  margin-bottom: 16px;
+}
+
+.title-section .plan-selector {
+  margin-top: 40px;
+  padding: 0px 2px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 50px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title-section .plan-selector button {
+  background: transparent;
+  border: none;
+  text-transform: none;
+  padding: 10px 35px;
+}
+
+.title-section .plan-selector button.active {
+  border-radius: 100px;
+  border: 1px solid rgba(248, 250, 251, 0.1);
+  background: rgba(248, 250, 251, 0.1);
+}
+
+.cards-section {
+  width: 100%;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.cards-section .card {
+  width: 330px;
+  height: 820px;
+  padding: 30px;
+  border-radius: 3px;
+  border: 1px solid #3d3e3f;
+  background: #2b2b2c;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-section .card .card-title {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+.cards-section .card .card-price {
+  color: #fff;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 74px;
+  margin-top: 16px;
+}
+
+.cards-section .card .card-price .sign {
+  font-size: calc(64px / 2);
+  transform: translateY(-10px);
+}
+
+.cards-section .card .card-price-subtitle {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 22px;
+  margin-left: 16px;
+}

@@ -93,7 +93,7 @@ button {
   padding: 18px 36px;
   text-transform: uppercase;
   border-radius: 6px;
-  /* ovveriding */
+  /* overriding */
   outline: none;
   border: none;
   cursor: pointer;

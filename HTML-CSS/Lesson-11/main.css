@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1:hover {
+  color: aqua;
+}
+
+h1::before {
+  content: "[";
+  color: cadetblue;
+  font-size: 100px;
+}
+
+h1::after {
+  /* content: "🎁"; */
+  /* content: url('https://cdn.motor1.com/images/mgl/mrz1e/s1/coolest-cars-feature.webp'); */
+  width: 100px;
+  height: 100px;
+  color: cadetblue;
+  font-size: 100px;
+}
+
+p {
+  width: 30%;
+  font-size: 30px;
+}
+
+p::first-letter {
+  color: red;
+  font-size: 60px;
+}
+
+p::first-line {
+  color: chocolate;
+}
+
+p::selection {
+  background: lightgreen;
+}
+
+input {
+    font-size: 60px;
+}
+
+input::placeholder {
+    background: gainsboro;
+}
+
+.images {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.images img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* .images .img-1:hover */
+.images img:nth-child(1):hover {
+    filter: blur(5px);
+}
+
+.images img:nth-child(2):hover {
+    filter: sepia(100%);
+}
+
+.images img:nth-child(3):hover {
+    filter: contrast(80%);
+}
+
+.images img:nth-child(4):hover {
+    filter: hue-rotate(40deg);
+}
+
+.images img:nth-child(5):hover {
+    filter: grayscale(100%);
+}
+
+.images img:nth-child(6):hover {
+    filter: opacity(50%);
+}
+
+.images img:nth-child(7):hover {
+    filter: invert(30%);
+}
+
+.images img:nth-child(8):hover {
+    filter: brightness(0%);
+}
+
+.images img:nth-child(9):hover {
+    filter: saturate(10%);
+}
+
+.images img:nth-child(10):hover {
+    filter: drop-shadow(-16px -16px 5px black);
+    /* box-shadow: 10px 10px 10px 1px grey; */
+}
+
+
+.second-section {
+    --section-width: 800px;
+    --quantity-of-childs: 1;
+
+    width: 100%;
+    height: 300px;
+    background: gold;
+}
+
+.second-section .first-div {
+    background: blue;
+    /*  */
+    width: calc(var(--section-width) / var(--quantity-of-childs));
+    height: 100%;
+}
