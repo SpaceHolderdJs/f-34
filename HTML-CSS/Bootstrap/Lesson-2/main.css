@@ -1,0 +1,10 @@
+/* .grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100px 400px;
+    grid-template-rows: repeat(3, 100px);
+} */
+
+.spinner-border.green {
+    color: lime;
+}
