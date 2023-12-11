@@ -1,0 +1,12 @@
+.forms-wrapper {
+    width: 50%;
+    padding: 5rem;
+}
+
+.dropdown-content img {
+    object-fit: cover;
+}
+
+.padding {
+    padding: 10px;
+}

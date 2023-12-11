@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h1>Hello Materialize!</h1>
+    <div class="forms-wrapper">
+      <h2>Forms</h2>
+      <input id="email" type="text" placeholder="Enter the email" />
+      <label for="email">Enter the email</label>
+
+      <input disabled id="name" type="text" placeholder="Enter the name" />
+      <label for="name">Only first name</label>
+
+      <div class="input-field">
+        <i class="material-icons prefix">account_circle</i>
+        <input
+          id="second-name"
+          type="text"
+          placeholder="Enter the Second name"
+          class="validate"
+        />
+        <label for="second-name">Enter the Second name</label>
+      </div>
+
+      <div class="input-field">
+        <i class="material-icons prefix">attach_file</i>
+        <input
+          id="second-name"
+          type="text"
+          placeholder="Enter the Second name"
+          class="validate"
+        />
+        <label for="second-name">Enter the Second name</label>
+      </div>
+
+      <div class="input-field message">
+        <i class="material-icons prefix">mode_edit</i>
+        <textarea
+          id="message"
+          class="materialize-textarea"
+          data-length="30"
+        ></textarea>
+        <label for="message">Entrer your message</label>
+      </div>
+
+      <div class="switch">
+        <label>
+          Disable
+          <input type="checkbox" />
+          <span class="lever"></span>
+          Enable
+        </label>
+      </div>
+
+      <div class="switch">
+        <label>
+          Disable
+          <input disabled type="checkbox" />
+          <span class="lever"></span>
+          Enable
+        </label>
+      </div>
+
+      <div class="input-field">
+        <select>
+          <option value="" selected disabled>Selected option</option>
+          <option value="value-1">Opt 1</option>
+          <option value="value-2">Opt 2</option>
+        </select>
+        <label>Select the element</label>
+      </div>
+
+      <div class="input-field">
+        <select multiple>
+          <option value="" disabled>Selected option</option>
+          <option value="value-1">Opt 1</option>
+          <option value="value-2">Opt 2</option>
+        </select>
+        <label>Select the element</label>
+      </div>
+
+      <div class="input-field">
+        <select class="icons">
+          <option value="" selected disabled>Select car</option>
+          <option
+            value=""
+            data-icon="https://img.freepik.com/premium-photo/bangkok-thailand-08082022-lamborghini-luxury-super-car-fast-sports-premium-lighting-background-3d-illustration_67092-1599.jpg"
+          >
+            Car - 1
+          </option>
+          <option
+            value=""
+            data-icon="https://img.freepik.com/premium-photo/bangkok-thailand-08082022-lamborghini-luxury-super-car-fast-sports-premium-lighting-background-3d-illustration_67092-1599.jpg"
+          >
+            Car - 2
+          </option>
+          <option
+            value=""
+            data-icon="https://img.freepik.com/premium-photo/bangkok-thailand-08082022-lamborghini-luxury-super-car-fast-sports-premium-lighting-background-3d-illustration_67092-1599.jpg"
+          >
+            Car - 3
+          </option>
+        </select>
+      </div>
+
+      <p class="range-field">
+        <input type="range" step="0.1" min="0" max="5" />
+      </p>
+
+      <p>
+        <label>
+          <input name="group" type="radio" />
+          <span>Option 1</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input name="group" class="with-gap" type="radio" />
+          <span>Option 2</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input name="group" type="radio" disabled />
+          <span>Option 3 (disabled)</span>
+        </label>
+      </p>
+
+      <div class="input-field">
+        <input id="date" type="text" class="datepicker" />
+        <label for="date">Enter the date</label>
+      </div>
+
+      <div class="input-field">
+        <input id="time" type="text" class="timepicker" />
+        <label for="time">Select the time</label>
+      </div>
+
+      <div class="chip">
+        <span>Text</span>
+        <i class="material-icons close">close</i>
+      </div>
+      <div class="chip">
+        <img
+          src="https://img.freepik.com/premium-photo/bangkok-thailand-08082022-lamborghini-luxury-super-car-fast-sports-premium-lighting-background-3d-illustration_67092-1599.jpg"
+        />
+        <span>Text</span>
+        <i class="material-icons close">close</i>
+      </div>
+
+      <p>
+        <label>
+          <input type="checkbox" />
+          <span>Allow to use my data</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" class="filled-in" />
+          <span>Allow to use my data</span>
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" disabled />
+          <span>Allow to use my data</span>
+        </label>
+      </p>
+
+      <div class="input-field">
+        <input
+          type="text"
+          id="autocomplete-input"
+          class="autocomplete"
+          placeholder="Enter your name"
+        />
+      </div>
+
+      <h2>Text flow-text</h2>
+
+      <p class="flow-text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias
+        molestias sed iure beatae, pariatur accusantium autem atque quae, ipsam
+        nesciunt ab a dolorem sequi quam? Odit ducimus at laboriosam amet?
+      </p>
+
+      <h2>Tables</h2>
+
+      <p>Default</p>
+      <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Igor</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>Olena</td>
+                <td>44</td>
+            </tr>
+            <tr>
+                <td>Egor</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <p>Striped</p>
+      <table class="striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Igor</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>Olena</td>
+                <td>44</td>
+            </tr>
+            <tr>
+                <td>Egor</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <p>Highlight (centered)</p>
+      <table class="centered highlight">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Igor</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>Olena</td>
+                <td>44</td>
+            </tr>
+            <tr>
+                <td>Egor</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <p>Responsive table</p>
+      <table class="centered striped responsive-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Igor</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>Olena</td>
+                <td>44</td>
+            </tr>
+            <tr>
+                <td>Egor</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <h2>Shadows</h2>
+      <p class="padding teal z-depth-1 col p5 m6">Shadow</p>
+      <p class="padding light-blue z-depth-2 col p5 m6">Shadow</p>
+      <p class="padding pink z-depth-3 col p5 m6">Shadow</p>
+      <p class="padding lime z-depth-4 col p5 m6">Shadow</p>
+      <p class="padding grey darken-3 z-depth-5 col p5 m6">Shadow</p>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("textarea#message").characterCounter();
+        $("select").formSelect();
+        $(".datepicker").datepicker();
+        $(".timepicker").timepicker();
+        $("input.autocomplete").autocomplete({
+          data: {
+            Igor: null,
+            Alex: null,
+            Nastya: null,
+          },
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
