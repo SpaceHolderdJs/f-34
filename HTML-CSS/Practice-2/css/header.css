@@ -1,0 +1,13 @@
+header .header-content {
+  width: 70%;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #737373;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
