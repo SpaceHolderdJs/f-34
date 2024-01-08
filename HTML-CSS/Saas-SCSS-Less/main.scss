@@ -1,0 +1,44 @@
+$green: rgb(64, 223, 40);
+$spacing: 10px;
+
+@mixin theme() {
+    border: 5px dotted blue;
+    border-radius: 50px;
+    margin: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: gray;
+}
+
+article {
+    @include theme;
+
+    max-width: 50%;
+    text-align: center;
+
+    h2 {
+        color: white;
+
+        span {
+            color: $green;
+        }
+    }
+}
+
+.article {
+    @include theme;
+
+    background: white;
+    padding: 10px;
+
+    .heading {
+        font-size: 30px;
+        #span {
+            font-weight: 900;
+            color: $green;
+        }
+    }
+}
