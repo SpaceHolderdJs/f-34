@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+@mixin mix()
+    background: linear-gradient(40deg, red, blue)
+    border: 2px solid black
+
+$padding-sm: 20px
+
+body
+    background: purple
+    border: 1px solid red
+    padding: $padding-sm
+
+.div
+    background: black
+    $padding-lg: 40px
+
+    @include mix
+
+    h2
+        color: white
+        padding: $padding-lg
+
+        span
+            color: red
+
+            .blue
+                color: blue
+                padding: $padding-lg
+
+    article
+        background: pink
+
+a:before, a:after
+    content: "HELLO"
+    color: white
+    padding: $padding-lg
+    width: calc(100% - 30px)
