@@ -39,3 +39,17 @@ $blue-gradient: linear-gradient(
   font-weight: 700;
   line-height: normal;
 }
+
+@mixin input() {
+  padding: 20px 30px;
+  border-radius: 50px;
+  border: 3px solid #393939;
+  box-sizing: content-box;
+
+  color: #afafaf;
+  font-family: Noto Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

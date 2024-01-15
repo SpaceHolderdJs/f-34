@@ -73,11 +73,257 @@ h6 {
     }
 
     .images-wrapper {
-        display: flex;
-        width: 100%;
-        gap: 36px;
-        justify-content: flex-end;
-        transform: translateX(10vw);
+      display: flex;
+      width: 100%;
+      gap: 36px;
+      justify-content: flex-end;
+      transform: translateX(10vw);
     }
+  }
+}
+
+.steps-section {
+  width: 100%;
+  background: rules.$darkblue;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .steps-content {
+    width: 80%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    gap: 60px;
+
+    .image-wrapper {
+      width: 70%;
+      margin-top: 70px;
+
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50px;
+      }
+    }
+
+    .content-wrapper {
+      width: 30%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+
+      margin-top: 100px;
+
+      h4 {
+        color: rules.$white;
+        font-family: Noto Sans;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+
+        .lightblue {
+          color: rules.$lightblue;
+        }
+      }
+
+      .divider {
+        width: 100px;
+        height: 8px;
+        background: rules.$white;
+      }
+
+      .step-wrapper {
+        .number {
+          color: rules.$white;
+          font-family: Noto Sans;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 900;
+          line-height: 32px;
+          margin: 0;
+          margin-bottom: 16px;
+        }
+
+        .text {
+          color: rules.$white;
+          font-family: Noto Sans;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 32px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.feedback-section {
+  width: 100%;
+  background: rules.$darkblue;
+
+  padding-top: 90px;
+  padding-bottom: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .feedback-content {
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    gap: 70px;
+
+    .feedback-card {
+      width: 30%;
+      border-radius: 50px;
+      background: rules.$blue-gradient;
+
+      padding: 10px 5px 10px 23px;
+
+      .card-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        gap: 13px;
+
+        img {
+          width: 68px;
+          height: 68px;
+          border-radius: 68px;
+        }
+
+        .card-header-text {
+          display: flex;
+          flex-direction: column;
+
+          h6 {
+            color: rules.$white;
+            font-family: Noto Sans;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.6px;
+            margin-bottom: 5px;
+          }
+
+          span {
+            color: rules.$white;
+            font-family: Noto Sans;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.39px;
+          }
+        }
+      }
+
+      .card-body {
+        margin-top: 30px;
+
+        p {
+          color: rules.$white;
+          font-family: Noto Sans;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.6px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.business-section {
+  width: 100%;
+  background: rules.$white;
+
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .business-wrapper {
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+
+    .business-text {
+      width: 60%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+
+      h2 {
+        color: rules.$darkblue;
+        font-family: Noto Sans;
+        font-size: 70px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+      }
+
+      form {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        input {
+          @include rules.input;
+          width: 450px;
+        }
+
+        button {
+          @include rules.button;
+
+          background: rules.$darkblue;
+          color: rules.$white;
+          box-sizing: border-box;
+          width: 180px;
+          height: 79px;
+        }
+      }
+    }
+
+    .image-wrapper {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.text-marquee {
+  width: 100%;
+  height: 110px;
+  background: rules.$darkblue;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    color: rgba(161, 161, 161, 0.74);
+    font-family: Noto Sans;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
   }
 }
