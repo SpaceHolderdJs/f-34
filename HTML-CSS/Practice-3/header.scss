@@ -1,45 +1,71 @@
-@use 'rules';
+@use "rules";
 
 header {
-    width: 100%;
-    height: 140px;
-    background: rules.$darkblue;
-    color: rules.$white;
+  width: 100%;
+  height: 140px;
+  background: rules.$darkblue;
+  color: rules.$white;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .header-content {
+    width: 80%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 
-    .header-content {
-        width: 80%;
-        display: flex;
-        justify-content: space-between;
-
-        h2 {
-            margin: auto 0;
-        }
-
-        .buttons-container {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 90px;
-
-            nav {
-                display: flex;
-                gap: 60px;
-
-                a {
-                    @include rules.link
-                }
-            }
-
-            button {
-                @include rules.button
-            }
-        }
+    h2 {
+      margin: auto 0;
     }
 
+    .buttons-container {
+      width: 75%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 90px;
 
+      nav {
+        display: flex;
+        gap: 60px;
+
+        a {
+          @include rules.link;
+        }
+      }
+
+      button {
+        @include rules.button;
+      }
+    }
+  }
+}
+
+@media (max-width: rules.$tablet) {
+  header {
+    .header-content {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      .buttons-container {
+        width: 100%;
+        gap: 10px;
+        justify-content: space-between;
+
+        nav {
+          width: auto;
+          gap: 30px;
+        }
+
+        button {
+            width: max-content;
+            font-size: 20px;
+            padding: 15px 30px;
+        }
+      }
+    }
+  }
 }
