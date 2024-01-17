@@ -4,6 +4,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 
   * {
     font-family: Noto Sans;
@@ -78,6 +79,12 @@ h6 {
       gap: 36px;
       justify-content: flex-end;
       transform: translateX(10vw);
+
+      img {
+        width: 20vw;
+        height: 665px;
+        object-fit: cover;
+      }
     }
   }
 }
@@ -325,5 +332,41 @@ h6 {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+  }
+}
+
+
+@media (max-width: rules.$tablet) {
+  .hero-section {
+    .section-content {
+      margin-top: 50px;
+      grid-template-columns: 1fr;
+
+      article {
+        text-align: center;
+        align-items: center;
+
+        h1 {
+          font-size: 50px;
+        }
+
+        p {
+          font-size: 20px;
+          width: 100%;
+        }
+      }
+
+      .images-wrapper {
+        transform: none;
+        margin-top: 50px;
+        justify-content: center;
+
+        img {
+          width: auto;
+          height: auto;
+          object-fit: none;
+        }
+      }
+    }
   }
 }

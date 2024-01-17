@@ -10,3 +10,9 @@
 .padding {
     padding: 10px;
 }
+
+/* Color of checkbox input */
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    background-color: blueviolet;
+    border: 2px solid blueviolet;
+}

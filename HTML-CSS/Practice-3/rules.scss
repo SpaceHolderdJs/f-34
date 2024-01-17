@@ -10,6 +10,11 @@ $blue-gradient: linear-gradient(
   rgba(118, 59, 194, 0) 103.82%
 );
 
+// screens
+$phone: 500px;
+$tablet: 1000px;
+$desktop: 1300px;
+
 @mixin link() {
   color: #fff;
   font-family: Noto Sans;

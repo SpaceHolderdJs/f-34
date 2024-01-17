@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 body * {
   font-family: Noto Sans;
@@ -83,6 +84,11 @@ h6 {
   gap: 36px;
   justify-content: flex-end;
   transform: translateX(10vw);
+}
+.hero-section .section-content .images-wrapper img {
+  width: 20vw;
+  height: 665px;
+  object-fit: cover;
 }
 
 .steps-section {
@@ -310,4 +316,32 @@ h6 {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+@media (max-width: 1000px) {
+  .hero-section .section-content {
+    margin-top: 50px;
+    grid-template-columns: 1fr;
+  }
+  .hero-section .section-content article {
+    text-align: center;
+    align-items: center;
+  }
+  .hero-section .section-content article h1 {
+    font-size: 50px;
+  }
+  .hero-section .section-content article p {
+    font-size: 20px;
+    width: 100%;
+  }
+  .hero-section .section-content .images-wrapper {
+    transform: none;
+    margin-top: 50px;
+    justify-content: center;
+  }
+  .hero-section .section-content .images-wrapper img {
+    width: auto;
+    height: auto;
+    object-fit: none;
+  }
 }
