@@ -32,7 +32,7 @@ h6 {
 .hero-section .section-content article {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
 }
 .hero-section .section-content article h1,
 .hero-section .section-content article p {
