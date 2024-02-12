@@ -62,5 +62,45 @@ for (let i = 0; i < str3.length; i++) {
 
 console.log(modifiedStr);
 
-for await (const n of []) {
+// for await (const n of []) {
+// }
+
+function repeat(message, times) {
+  let counter = 0;
+
+  while (counter < times) {
+    console.log(message);
+    counter = counter + 1;
+  }
 }
+
+repeat("Hello", 5);
+
+function getMonthsOf(season) {
+  const normalizedSeason = season.toLowerCase().trim();
+
+  switch (normalizedSeason) {
+    case "winter":
+      return "December, ...";
+
+    case "spring":
+      return "March, ...";
+
+    case "summer":
+      return "June, ...";
+
+    case "autumn":
+      return "September, ...";
+
+    default:
+      return "-_-";
+  }
+  // опишіть функцію getMonthsOf, яка залежно від пори року
+  // (winter, summer, autumnm, spring) поверне її місяці як строку (switch-case)
+}
+
+const summerMonths = getMonthsOf("summer"); // -> June, July, August
+console.log(summerMonths);
+
+const winterMonths = getMonthsOf("winter");
+console.log(winterMonths);
