@@ -148,3 +148,58 @@ function sumOf(numbers, sum) {
 }
 
 console.log(sumOf(numbers, lookingFor));
+
+// Завдання
+
+function findCharactersQuantity(str, char) {
+  // функція має рахувати кількість символів char у строці str
+  let counter = 0;
+
+  for (const chr of str) {
+    if (chr === char) {
+      counter = counter + 1;
+    }
+  }
+
+  return counter;
+}
+
+const result1 = findCharactersQuantity("a a xxxxxxxxxx", "x"); // => 3 (три літери а)
+console.log(result1, "res1");
+
+function encryption(str) {
+  // функція має замініти у str:
+  // кожну літеру а на :
+  // кожну літеру b на -
+  // кожну літеру с на !
+  // for - of , switch - case
+
+  let result = "";
+
+  for (const char of str) {
+    switch (char) {
+      case "a":
+        result = result.concat(":");
+        break;
+
+      case "b":
+        result = result.concat("-");
+        break;
+
+      case "c":
+        result = result.concat("!");
+        break;
+
+      default:
+        result = result.concat(char);
+    }
+  }
+
+  return result;
+}
+
+const result3 = encryption("abc");
+// => ":-!"
+const result4 = encryption("abcd");
+//  => ":-!d"
+console.log(result3, result4, "result (3,4)");
