@@ -138,3 +138,20 @@ console.log(calculation["/"]);
 console.log(calculation["*"]);
 
 console.log(calculation.a, calculation.b);
+
+const obj5 = { a: 10, b: 10, c: 80 };
+
+function checkValues(obj) {
+  // функція має виводити true
+  // якщо obj має у сумі показників значень a,b,c число більше за 50
+  const sum = obj5.a + obj5["b"] + obj5.c;
+
+  if (sum > 50) {
+    console.log(true);
+  }
+}
+
+const result3 = checkValues(obj);
+console.log(result3);
+
+const result4 = checkValues({ a: 30, b: 1, c: 1 });
