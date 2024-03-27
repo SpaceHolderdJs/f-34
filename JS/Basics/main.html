@@ -7,11 +7,31 @@
     <style>
         body {
             background: black;
+            min-height: 100vh;
+            overflow: hidden;
+            animation: 80s linear infinite spinning;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        @keyframes spinning {
+            from {
+                transform: rotateZ(10deg);
+            }
+
+            to {
+                transform: rotateZ(370deg);
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Hello, JavaScript</h1>
-    <script src="./functions-1.js"></script>
+    <script src="./functions-2.js"></script>
 </body>
 </html>
