@@ -207,3 +207,27 @@ Array.prototype.f34 = function (msg) {
 
 const arr = [1, 2, 3, 4, 5].f34("Hello");
 console.log(arr, "arr");
+
+function hw() {
+  const data1 = {
+    users: [{ email: "email1@gmai.com" }, { email: "email2@gmail.com" }],
+    addUser: function (user) {
+      this.users.push(user);
+    },
+  };
+
+  const data2 = {
+    users: [],
+  };
+
+  data2.addUser = data1.addUser.bind(data2);
+  data2.addUser({ email: "email3@gmail.com" });
+
+  data1.addUser.apply(data2, [{ email: "email4@gmail.com" }]);
+  data1.addUser.call(data2, { email: "email5@gmail.com" });
+
+  console.log(data2, "data2.bind");
+  // "Навчіть" data2 додавати користувачів 3 способами (bind, call, apply)
+}
+
+hw();
