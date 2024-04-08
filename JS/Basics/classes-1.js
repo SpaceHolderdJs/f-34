@@ -170,3 +170,49 @@ console.log(calculator.nextOperation(), "nextOperation(3)");
 console.log(Calculator.PI);
 
 console.log(calculator.add(10, Calculator.PI));
+
+class User {
+  constructor(name, age, city) {
+    this.name = name;
+    this.age = age;
+    this.city = city;
+  }
+
+  sayHello() {
+    console.log(`Hello from ${this.name}`);
+  }
+
+  changeCity(city) {
+    this.city = city;
+  }
+}
+
+const user = new User("Name1", 21, "Kyiv");
+console.log(user, "user");
+user.sayHello();
+user.changeCity("Odessa");
+console.log(user);
+
+class AdvancedUser extends User {
+  constructor(name, age, city, location, email) {
+    super(name, age, city);
+
+    this.location = location;
+    this.email = email;
+  }
+
+  sayHello() {
+    console.log(`Hello from advanced user ${this.name} ${this.email}`);
+  }
+}
+
+const advancedUser = new AdvancedUser(
+  "Name2",
+  25,
+  "Lviv",
+  "Ukraine",
+  "email@gmai.com"
+);
+
+console.log(advancedUser, "advancedUser");
+advancedUser.sayHello();
