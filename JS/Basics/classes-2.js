@@ -259,3 +259,56 @@ user.getInfo();
 // 2. Описати методи incerease(amount)/decrease(amount) budget
 // 3. Описати метод getBudget
 // 4. Описати метод getInfo (виводить всі дані в консоль)
+
+class Restaurant {
+  #feedbacks;
+
+  constructor(visitors, rating, avgPrice, feedbacks) {
+    this.visitors = visitors;
+    this.rating = rating;
+    this.avgPrice = avgPrice;
+
+    this.#feedbacks = feedbacks;
+  }
+
+  addFeedback(feedback) {
+    this.#feedbacks.push(feedback);
+  }
+
+  removeFeedback(feedback) {
+    this.#feedbacks = this.#feedbacks.filter((fb) => fb !== feedback);
+  }
+
+  clearFeedbacks() {
+    this.#feedbacks = [];
+  }
+}
+
+const restaurant = new Restaurant(20, 5.5, 1000, []);
+
+console.log(restaurant, "restaurant");
+
+restaurant.addFeedback("Good place");
+console.log(restaurant);
+
+restaurant.removeFeedback("Good place");
+console.log(restaurant);
+
+restaurant.addFeedback("Good place");
+restaurant.addFeedback("Good place");
+restaurant.addFeedback("Good place");
+restaurant.addFeedback("Good place");
+
+restaurant.clearFeedbacks();
+
+console.log(restaurant);
+
+console.log(restaurant instanceof Restaurant);
+console.log({} instanceof Restaurant);
+
+console.log(restaurant instanceof Object);
+
+console.log(restaurant);
+
+console.log(typeof "Hello" === "string");
+console.log(typeof restaurant);
