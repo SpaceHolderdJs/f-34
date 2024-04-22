@@ -115,14 +115,14 @@ document.body.appendChild(dblClickButton);
 const selectButtonsWrapper = document.getElementById("select-buttons-wrapper");
 
 const selectButtonsNumbers = [1, 2, 3];
-const selectedButtons = [];
+let selectedButtons = [];
 
 const selectButtons = selectButtonsNumbers.map((number) => {
   const selectBtn = document.createElement("button");
   selectBtn.textContent = number;
 
   selectBtn.onclick = (event) => {
-    if (event.ctrlKey && !selectButtons.includes(number)) {
+    if (event.ctrlKey && !selectedButtons.includes(number)) {
       selectedButtons.push(number);
       event.target.classList.add("selected");
 
@@ -130,6 +130,14 @@ const selectButtons = selectButtonsNumbers.map((number) => {
 
       console.log(selectedButtons, "selectedButtons");
     }
+
+    if (event.shiftKey && selectedButtons.includes(number)) {
+      selectedButtons = selectedButtons.filter((n) => n !== number);
+      event.target.classList.remove("selected");
+
+      console.log(event.shiftKey, "!!! Shift key");
+    }
+
     console.log(number);
   };
 
