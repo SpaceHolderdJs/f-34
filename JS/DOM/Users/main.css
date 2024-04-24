@@ -1,62 +1,111 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: #97E4FE;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  background: #97e4fe;
+
+  display: flex;
+  align-items: center;
 }
 
 body * {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .user-card {
-    width: 800px;
-    background: white;
-    margin: 10px;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 1px 1px 15px 0.5px grey;
+  width: 800px;
+  background: white;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 1px 1px 15px 0.5px grey;
 }
 
 .user-card .content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .user-card .content img {
-    width: 40%;
-    height: 80%;
-    object-fit: cover;
-    border-radius: 16px;
+  width: 40%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 .user-card .content article {
-    width: 60%;
-    font-size: 20px;
-    color: rgb(60, 59, 59);
+  width: 60%;
+  font-size: 20px;
+  color: rgb(60, 59, 59);
 }
 
 .user-card .content .box {
-    background: lightgrey;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 7px;
+  background: lightgrey;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 7px;
 }
 
 .user-card .content .box.inline {
-    display: flex;
-    align-items: center;
-    overflow: auto;
+  display: flex;
+  align-items: center;
+  overflow: auto;
 }
 
 .user-card .content .box .box-item {
-    background: #97E4FE;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 7px;
+  background: #97e4fe;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.users-wrapper,
+.create-user-form-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-user-form-wrapper {
+  position: relative;
+}
+
+form {
+  width: 40%;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 1px 1px 15px 0.5px grey;
+
+  position: fixed;
+  top: 20%;
+  right: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+form input {
+  width: 100%;
+  border: none;
+  background: lightgrey;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  outline: none;
+  color: black;
+}
+
+button {
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  background: #97e4fe;
+  cursor: pointer;
+  font-size: 18px;
 }
