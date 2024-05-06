@@ -1,0 +1,8 @@
+aside {
+    background: red;
+    color: white;
+}
+
+p {
+    color: attr(data-color);
+}
