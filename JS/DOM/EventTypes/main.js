@@ -139,6 +139,24 @@ document.body.appendChild(rangeInput);
 //   console.log(event.pageX, event.pageY, "coordinates");
 // };
 
+const coordsElements = {
+  x: document.createElement("h1"),
+  y: document.createElement("h1"),
+};
+
+const { x, y } = coordsElements;
+
+x.textContent = `X: 0`;
+document.body.appendChild(x);
+
+y.textContent = `Y: 0`;
+document.body.appendChild(y);
+
+document.body.onmousemove = (event) => {
+  x.textContent = `X: ${event.pageX}`;
+  y.textContent = `Y: ${event.pageY}`;
+};
+
 // button.onclick = function (param) {
 //   console.log(this, "this from function expression");
 //   console.log("Second handler");
