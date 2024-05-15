@@ -18,6 +18,7 @@ const highlightKey = (keyElement) => {
 const keyboardWrapper = document.querySelector("#keyboard");
 
 const keys = [
+  ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
   ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
   ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
   ["z", "x", "c", "v", "b", "n", "m"],
@@ -32,7 +33,7 @@ for (const keysLine of keys) {
   keysLine.forEach((key) => {
     const kbd = document.createElement("kbd");
     kbd.textContent = key;
-    kbd.className = key;
+    kbd.className = `key-${key}`;
 
     key === " " && kbd.classList.add("space");
 
@@ -50,14 +51,15 @@ document.addEventListener("keydown", (event) => {
 
   const key = event.key.toLowerCase();
   const keyClass = key === " " ? "space" : key;
-  const keyElement = document.querySelector(`kbd.${keyClass}`);
+  const keyElement = document.querySelector(`kbd.key-${keyClass}`);
 
   highlightKey(keyElement);
   onKeyPress(key);
 
   console.log(keyElement);
 
-  // if (event.ctrlKey && event.key.toLowerCase() === "v") {
-  //   console.log("cntrl + v was pressed");
-  // }
+  if (event.ctrlKey && event.key.toLowerCase() === "d") {
+    console.log("cntrl + d was pressed");
+    input.value = "";
+  }
 });
