@@ -69,3 +69,15 @@ console.log(jsonUser, "jsonUser");
 
 const jsUser = JSON.parse(jsonUser);
 console.log(jsUser, "jsUser");
+
+function createElement() {
+  const tagType = prompt("Element type (tag)") || "div";
+  const content = prompt("Content") || "";
+
+  const element = document.createElement(tagType);
+  element.textContent = content;
+
+  document.body.appendChild(element);
+}
+
+createElement();
