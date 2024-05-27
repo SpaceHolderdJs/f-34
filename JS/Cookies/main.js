@@ -93,3 +93,26 @@ document.cookie = "city=Kyiv";
 Cookies.set("key", "value", { domain: ".com" });
 console.log(Cookies.get("key"));
 Cookies.remove("name", { path: "/JS/Cookies" });
+
+const data = {
+  value1: "value",
+  value2: "value",
+  value3: "value",
+  value4: 10,
+  value5: 11,
+};
+
+for (const item in data) {
+  if (typeof data[item] === "string") {
+    document.cookie = `${item}=${data[item]}`;
+  }
+
+  if (typeof data[item] === "number") {
+    const expiresDate = new Date();
+    expiresDate.setHours(expiresDate.getHours() + 1);
+
+    document.cookie = `${item}=${
+      data[item]
+    }; expires=${expiresDate.toUTCString()}`;
+  }
+}
