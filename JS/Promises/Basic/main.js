@@ -138,3 +138,19 @@ const rejectPromise = new Promise((res, rej) => {
 rejectPromise
   .then((something) => console.log(something, "something"))
   .catch((err) => console.log(err, "err"));
+
+const user = {
+  name: "Oleg",
+  age: 26,
+  position: "Middle web Developer",
+};
+
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(user);
+  }, 3000);
+}).then((userData) => localStorage.setItem("user", JSON.stringify(userData)));
+
+new Promise((_, rej) => rej("Negative prompt")).catch((err) =>
+  console.log(err)
+);
