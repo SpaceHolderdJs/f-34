@@ -129,3 +129,24 @@ fetch("https://jsonplaceholder.typicode.com/comments/1", { method: "DELETE" })
   .catch((err) => console.log(err));
 
 // CRUD Operations
+
+// H/W
+// https://jsonplaceholder.typicode.com/albums
+
+fetch("https://jsonplaceholder.typicode.com/albums", {
+  method: "GET",
+})
+  .then((response) => response.json())
+  .then((albums) => renderAlbums(albums));
+
+function renderAlbums(albums) {
+  albums.forEach((album) => {
+    const { title, id } = album;
+
+    document.body.innerHTML += `
+        <div>
+            <h3>${id},${title}</h3>
+        </div>
+    `;
+  });
+}
