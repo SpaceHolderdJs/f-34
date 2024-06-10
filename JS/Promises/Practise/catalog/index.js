@@ -2,6 +2,29 @@ class Catalog {
   static elements = {
     categories: document.querySelector(".categories"),
     goods: document.querySelector(".goods"),
+    search: document.querySelector("#search-input"),
+  };
+
+  static searchGoods = async (query = "") => {
+    try {
+      const { data: products } = await API.get("/products");
+
+      if (!query) {
+        Catalog.renderGoods(products);
+
+        return;
+      }
+
+      const filteredProducts = products.filter((good) =>
+        good.title.toLowerCase().includes(query.toLowerCase())
+      );
+
+      console.log(filteredProducts, "filterredProducts");
+
+      Catalog.renderGoods(filteredProducts);
+    } catch (err) {
+      alert(err.response.data);
+    }
   };
 
   static renderCategories = async () => {
@@ -10,8 +33,12 @@ class Catalog {
 
       categories.forEach((category) => {
         const span = document.createElement("span");
-        span.className = "badge rounded-pill text-bg-primary";
+        span.className = "badge rounded-pill text-bg-primary p-2";
         span.textContent = category;
+
+        span.onclick = () => {
+          Catalog.renderGoodsOfCategory(category);
+        };
 
         Catalog.elements.categories.appendChild(span);
       });
@@ -20,14 +47,14 @@ class Catalog {
     }
   };
 
-  static renderGoods = (goods) => {
+  static renderGoods = (goods = []) => {
     Catalog.elements.goods.innerHTML = "";
 
     goods.forEach((good) => {
       const { title, price, category, description, image } = good;
 
       Catalog.elements.goods.innerHTML += `
-        <div class="card">
+        <div class="card good-card">
           <img class="card-img-top" src="${image}" alt="${title}" />
           <div class="card-body">
             <h4 class="card-title">${title}, ${price}</h4>
@@ -36,6 +63,17 @@ class Catalog {
         </div>
       `;
     });
+  };
+
+  static renderGoodsOfCategory = async (category = "jewelery") => {
+    try {
+      const { data: products } = await API.get(
+        `/products/category/${category}`
+      );
+      Catalog.renderGoods(products);
+    } catch (err) {
+      alert(err.response.data);
+    }
   };
 
   static renderAllGoods = async () => {
@@ -50,3 +88,7 @@ class Catalog {
 
 Catalog.renderCategories();
 Catalog.renderAllGoods();
+
+Catalog.elements.search.oninput = (event) => {
+  Catalog.searchGoods(event.target.value);
+};
