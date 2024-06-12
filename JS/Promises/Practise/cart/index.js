@@ -25,7 +25,13 @@ class Cart {
           (product) => product.id === +productId
         );
 
-        const { title, description, price, image, category } = productData;
+        const { title, description, price, image, category, id } = productData;
+
+        // [TODO]: Check if it is possible
+        const onRemoveItemClick = () => {
+          CartAPI.removeFromCart(id, 1);
+          Cart.renderCart();
+        };
 
         Cart.elements.container.innerHTML += `
           <div class="card mb-3" style="max-width: 640px;">
@@ -50,6 +56,16 @@ class Cart {
                   <strong>
                     <p>Items: ${quantity}</p>
                   </strong>
+
+                  <button
+                    class="btn btn-danger"
+                    onclick="
+                    CartAPI.removeFromCart(${id}, 1);
+                    Cart.renderCart();
+                  "
+                  >
+                    Remove from cart
+                  </button>
                 </div>
               </div>
             </div>
