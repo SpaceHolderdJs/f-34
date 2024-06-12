@@ -5,6 +5,8 @@ class Catalog {
     search: document.querySelector("#search-input"),
   };
 
+  static allGoods = [];
+
   static searchGoods = async (query = "") => {
     try {
       const { data: products } = await API.get("/products");
@@ -50,8 +52,14 @@ class Catalog {
   static renderGoods = (goods = []) => {
     Catalog.elements.goods.innerHTML = "";
 
-    goods.forEach((good) => {
-      const { title, price, category, description, image } = good;
+    const goodsToRender = goods.length ? goods : Catalog.allGoods;
+
+    goodsToRender.forEach((good) => {
+      const { title, price, description, image, id } = good;
+
+      const currentGoodQuantityInCart = CartAPI.cart[id];
+
+      //   CartAPI.addToCart()
 
       Catalog.elements.goods.innerHTML += `
         <div class="card good-card">
@@ -59,6 +67,34 @@ class Catalog {
           <div class="card-body">
             <h4 class="card-title">${title}, ${price}</h4>
             <p class="card-text">${description}</p>
+
+            ${
+              currentGoodQuantityInCart
+                ? `<button
+                    onclick="
+                        CartAPI.addToCart(${id}, 1);
+                        Catalog.renderGoods();
+                    "
+                    class="btn btn-primary position-relative"
+                  >
+                    Add to cart
+                    <span
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    >
+                      ${currentGoodQuantityInCart}
+                    </span>
+                  </button>`
+                : `<button
+                    onclick="
+                        CartAPI.addToCart(${id}, 1);
+                        Catalog.renderGoods();
+                    "
+                    class="btn btn-primary"
+                  >
+                    Add to cart
+                  </button>`
+            }
+
           </div>
         </div>
       `;
@@ -79,6 +115,7 @@ class Catalog {
   static renderAllGoods = async () => {
     try {
       const { data: products } = await API.get("/products");
+      Catalog.allGoods = products;
       Catalog.renderGoods(products);
     } catch (err) {
       alert(err.response.data);
