@@ -1,6 +1,7 @@
 class Cart {
   static elements = {
     container: document.querySelector(".cart-container"),
+    clearAllCartButton: document.querySelector("#cart-clear-all"),
   };
 
   static renderCart = async () => {
@@ -66,6 +67,16 @@ class Cart {
                   >
                     Remove from cart
                   </button>
+
+                  <button
+                    class="btn btn-danger"
+                    onclick="
+                    CartAPI.removeAllFromCart(${id});
+                    Cart.renderCart();
+                  "
+                  >
+                    Remove all this items from cart
+                  </button>
                 </div>
               </div>
             </div>
@@ -80,3 +91,8 @@ class Cart {
 }
 
 Cart.renderCart();
+
+Cart.elements.clearAllCartButton.onclick = () => {
+  CartAPI.clear();
+  Cart.renderCart();
+};
