@@ -200,3 +200,26 @@ uniqueOrders.forEach((value) => {
   const orderData = { price: orders[orderIndex].price, item: value };
   uniqueOrdersData.push(orderData);
 });
+
+// HW
+
+const orders2 = [
+  { item: "Socks", price: 30 },
+  { item: "TShirt", price: 20 },
+  { item: "Socks", price: 30 },
+  { item: "Shorts", price: 70 },
+];
+
+// {"Socks": {...item}}
+
+const mappedOrders = orders2.reduce((acc, order) => {
+  acc[order.item] = order;
+
+  return acc;
+}, {});
+
+console.log(mappedOrders, "mappedOrder");
+
+const names = ["Igor", "Nastya", "Oleg", "Max", "Max"];
+
+console.log(Array.from(new Set(names)), "unique names");
