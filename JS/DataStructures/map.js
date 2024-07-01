@@ -282,3 +282,25 @@ console.log(testMap, "result");
 
 console.log(testMap.size, "size");
 console.log(testMap.entries(), "entries");
+
+const wordsCount = (sentence) => {
+  const wordsMap = new Map();
+
+  const words = sentence.split(" ");
+
+  // words.forEach((word) => {
+  //   if (wordsMap.has(word)) {
+  //     const wordsQuantityBefore = wordsMap.get(word);
+  //     wordsMap.set(word, wordsQuantityBefore + 1);
+  //   } else {
+  //     wordsMap.set(word, 1);
+  //   }
+  // });
+
+  words.forEach((word) => wordsMap.set(word, (wordsMap.get(word) || 0) + 1));
+
+  return wordsMap;
+};
+
+const words = wordsCount("something text something something");
+console.log(words);
