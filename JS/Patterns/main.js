@@ -225,3 +225,333 @@ const rectangle = new Figure([2, 2, 4, 4], 15, 3);
 console.log(square.isSquare());
 console.log(triangle.isTriangle());
 console.log(rectangle.isRectangle());
+
+// Prototype (proto)
+
+function Car(color, name, price) {
+  this.color = color;
+  this.name = name;
+  this.price = price;
+
+  // this.show = function () {
+  //   console.log(this);
+  // };
+}
+
+Car.prototype.show = function () {
+  console.log(this);
+};
+
+const car1 = new Car("black", "toyota", 12000);
+car1.show();
+
+Car.prototype.ride = function (distance) {
+  console.log(`The car is riding ${distance}`);
+};
+
+const car2 = new Car("blue", "ford", 15555);
+car2.show();
+
+car1.ride(1000);
+
+// Object.prototype.hello = function () {
+//   console.log(`Hello from`, this);
+// };
+
+// const a1 = { a: 10 };
+// a1.hello();
+
+class A1 {
+  constructor(a) {
+    this.a = a;
+  }
+}
+
+class B1 extends A1 {
+  constructor(a) {
+    super(a);
+  }
+}
+
+const b = new B1(100);
+
+A1.prototype.show = function () {
+  console.log("Hello", this);
+};
+
+b.show();
+
+console.log(b.__proto__);
+
+// Завдання:
+// Реалізувати механіку протитоипного наслідування на базі коду:
+//
+
+class Customer {
+  constructor(name, budget, registrationDate) {
+    this.name = name;
+    this.budget = budget;
+    this.registrationDate = registrationDate;
+  }
+}
+
+Customer.prototype.buy = function (price) {
+  return this.budget - price;
+};
+
+class AdvancedCustomer extends Customer {
+  constructor(name, budget, registrationDate) {
+    super(name, budget, registrationDate);
+  }
+}
+
+AdvancedCustomer.prototype.buy = function (price, discount) {
+  return this.budget - (price - (price * discount) / 100);
+};
+
+const customer = new Customer("Oleg", 10000, new Date());
+const afterCustomerBuy = customer.buy(500);
+console.log(afterCustomerBuy);
+console.log(customer);
+
+const advancedCustomer = new AdvancedCustomer("Alina", 1000, new Date());
+const afterAdvencedCustomerBuy = advancedCustomer.buy(1000, 10);
+console.log(afterAdvencedCustomerBuy);
+console.log(advancedCustomer);
+// додати метод buy до customer
+// buy(price) = > budget - price
+
+// для AdvancedCustomer змінити цей метод так, щоб він приймав знижку
+// buy(price, discount) => budget - price (% discount)
+
+// Observer
+
+class Observerable {
+  constructor() {
+    this.observers = [];
+  }
+
+  notify(payload) {
+    this.observers.forEach((observer) => observer(payload));
+  }
+
+  subscribe(fn) {
+    this.observers.push(fn);
+  }
+
+  unscribe(fn) {
+    this.observers = this.observers.filter((obsrv) => obsrv !== fn);
+  }
+}
+
+const observeable = new Observerable();
+
+const registerUser = (user) => {
+  console.log(`This user ${user.name} was registered`);
+};
+
+const activateUser = (user) => {
+  console.log(`This user ${user.name} was actived just now!`);
+};
+
+observeable.subscribe(registerUser);
+observeable.subscribe(activateUser);
+
+const user = {
+  name: "Martin",
+  password: 1111111,
+};
+
+observeable.notify(user);
+
+const userObservable = new Observerable();
+
+class UserRegistrationComponent {
+  constructor(user) {
+    this.user = user;
+
+    userObservable.subscribe(this.register);
+  }
+
+  register(user) {
+    console.log(`This user ${user.name} was registered`);
+  }
+
+  render(parent) {
+    parent.innerHTML = `
+      <div>
+        <input />
+        <input />
+        <button>Create</button>
+      </div>
+    `;
+  }
+}
+
+class UserActivationComponent {
+  constructor(user) {
+    this.user = user;
+
+    userObservable.subscribe(this.activate);
+  }
+
+  activate() {
+    console.log(`This user was activated from a class ${user.name}`);
+  }
+
+  render(parent) {
+    parent.innerHTML = `
+      <div>
+        <input />
+        <button>Activate</button>
+      </div>
+    `;
+  }
+}
+
+const userRegistrationComponent = new UserRegistrationComponent(user);
+const userActivationComponent = new UserActivationComponent(user);
+
+userObservable.notify(user);
+
+// Завдання:
+
+// Створити власний екземплряр observable
+// та підписку на події через observer для різних сутностей
+// post, user1 на події update і post відповідно
+
+const postAndUserObservable = new Observerable();
+
+const post = {
+  update: function ({ title, text }) {
+    this.text = text;
+    this.title = title;
+
+    console.log(this, "Post updated");
+  },
+  title: "Title",
+  text: "Text...",
+};
+
+const user1 = {
+  post: function ({ title, text }) {
+    post.update({ title, text });
+  },
+
+  name: "User1",
+};
+
+postAndUserObservable.subscribe(post.update);
+postAndUserObservable.subscribe(user1.post);
+
+postAndUserObservable.notify({ title: "Title", text: "Text" });
+
+// class Observerable {
+//   constructor() {
+//     this.observers = [];
+//   }
+
+//   notify(payload) {
+//     this.observers.forEach((observer) => observer(payload));
+//   }
+
+//   subscribe(fn) {
+//     this.observers.push(fn);
+//   }
+
+//   unscribe(fn) {
+//     this.observers = this.observers.filter((obsrv) => obsrv !== fn);
+//   }
+// }
+
+// Middleware / Mediator
+
+const validateMiddleware = (data) => {
+  const { email, password } = data;
+  if (!email.includes("@") || !email.includes(".")) {
+    throw new Error("Email is not valid");
+  }
+
+  if (!password || password.length <= 3) {
+    throw new Error("Password is too short");
+  }
+
+  return data;
+};
+
+const encryptPasswordMiddleware = (data) => {
+  data.password = data.password.replaceAll("1", "$");
+
+  return data;
+};
+
+const addNameMiddleware = (data) => {
+  data.name = "Igor";
+
+  return data;
+};
+
+function saveUser(data, ...middlewares) {
+  // save to DB
+
+  let finalData = data;
+
+  middlewares.forEach((middleware) => {
+    finalData = middleware(data);
+  });
+
+  console.log("This data was saved", finalData);
+  return finalData;
+}
+
+saveUser(
+  { email: "email@gmail.com", password: "1111" },
+  validateMiddleware,
+  encryptPasswordMiddleware,
+  addNameMiddleware
+);
+
+const userToDelete = {
+  id: 1,
+  name: "Igor",
+  email: "email@gmail.com",
+  password: "$$$$$$",
+};
+
+let posts = [
+  { title: "Title1", text: "Text1", authorId: 1 },
+  { title: "Title2", text: "Text2", authorId: 1 },
+  { title: "Title3", text: "Text3", authorId: 2 },
+];
+
+// Використовуючи middleware патерн реалізувати:
+// 1. Видалення всіх постів користувача
+// 2. Розшифрувати пароль $ - 1
+// 3. Видалити name
+
+const deletePosts = (user) => {
+  posts = posts.filter((post) => post.authorId !== user.id);
+  return user;
+};
+
+const decryptPassword = (user) => {
+  user.password = user.password.replaceAll("$", "1");
+};
+
+const deleteName = (user) => {
+  delete user.name;
+};
+
+function deleteUser(user, ...middlewares) {
+  let userFinalData = user;
+
+  middlewares.forEach((middleware) => {
+    userFinalData = middleware(user);
+  });
+
+  console.log(`User ${user.email} was deleted`);
+
+  return userFinalData;
+}
+
+deleteUser(userToDelete, deletePosts, decryptPassword, deleteName);
