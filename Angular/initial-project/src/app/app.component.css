@@ -1,0 +1,24 @@
+header {
+    width: 100%;
+    background: lightslategrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+header h3 {
+    color: white;
+}
+
+header nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
