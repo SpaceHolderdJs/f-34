@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { UserType } from '../user.types';
 
 @Component({
   selector: 'app-user-card',
@@ -8,8 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './user-card.component.css'
 })
 export class UserCardComponent {
-  user = {
-    name: "Igor",
-    age: 25
-  };
+  @Input({ required: true }) user?: UserType;
 }

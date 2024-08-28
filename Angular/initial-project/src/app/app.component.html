@@ -1,8 +1,10 @@
-<h1>Hello Angular</h1>
-<p>Title: {{ title }}</p>
-
-<button (click)="changeTitle()">Change title</button>
-
-<app-user-card></app-user-card>
+<!-- <button (click)="changeTitle()">Change title</button> -->
+<header>
+  <h3>{{ title }}</h3>
+  <nav>
+    <a routerLink="/users">Users</a>
+    <a routerLink="/counter">Counter</a>
+  </nav>
+</header>
 
 <router-outlet />
