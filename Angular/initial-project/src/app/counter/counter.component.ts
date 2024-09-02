@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
+import { TestServiceService } from '../service/test-service/test-service.service';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
   imports: [],
+  providers: [TestServiceService],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css'
 })
 export class CounterComponent {
-  counter = 0;
+  constructor(public testService: TestServiceService) { }
 
-  increase() {
-    this.counter = this.counter + 1;
-  }
 
-  decrease() {
-    this.counter = this.counter - 1;
-  }
 }
