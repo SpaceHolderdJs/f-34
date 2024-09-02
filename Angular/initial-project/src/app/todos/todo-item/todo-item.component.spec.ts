@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserCardComponent } from './user-card.component';
+import { TodoItemComponent } from './todo-item.component';
 
-describe('UserCardComponent', () => {
-  let component: UserCardComponent;
-  let fixture: ComponentFixture<UserCardComponent>;
+describe('TodoItemComponent', () => {
+  let component: TodoItemComponent;
+  let fixture: ComponentFixture<TodoItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UserCardComponent]
+      imports: [TodoItemComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UserCardComponent);
+    fixture = TestBed.createComponent(TodoItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

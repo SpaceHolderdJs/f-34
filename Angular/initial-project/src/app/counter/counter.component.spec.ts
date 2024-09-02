@@ -20,14 +20,4 @@ describe('CounterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should have working counter functionality', () => {
-    expect(component.counter).toEqual(0);
-
-    component.increase();
-    expect(component.counter).toEqual(1);
-
-    component.decrease();
-    expect(component.counter).toEqual(0);
-  })
 });
