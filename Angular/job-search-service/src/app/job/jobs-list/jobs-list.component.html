@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="form" [formGroup]="searchFormGroup">
+    <mat-form-field>
+      <mat-label>Search job</mat-label>
+      <input matInput formControlName="query" />
+    </mat-form-field>
+    <button mat-button (click)="onSearch()">Search</button>
+  </div>
+
+  <div class="jobs-wrapper">
+    @for (job of jobsService.jobs; track job.job_id) {
+    <app-job-card [job]="job"></app-job-card>
+    }
+  </div>
+</div>
