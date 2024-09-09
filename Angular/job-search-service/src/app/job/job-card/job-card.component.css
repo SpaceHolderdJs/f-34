@@ -1,0 +1,18 @@
+.job-card {
+    margin: 10px 0;
+}
+
+.job-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-image {
+    object-fit: contain;
+}

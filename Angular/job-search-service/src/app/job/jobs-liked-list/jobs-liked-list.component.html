@@ -1,0 +1,11 @@
+<div class="wrapper">
+    @if(jobService.likedJobs.length) {
+        <div>
+            @for(job of jobService.likedJobs; track job.job_id) {
+                <app-job-card [job]="job"></app-job-card>
+            }
+        </div>
+    } @else { 
+        <h2>There is nothing liked yet</h2>
+    }
+</div>
