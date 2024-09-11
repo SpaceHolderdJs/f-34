@@ -82,7 +82,7 @@ export class JobService {
       employer_company_type: 'Technology',
       job_publisher: 'LinkedIn',
       job_id: 'GZFCv-muG9AAAAAAAAAAA',
-      job_employment_type: 'FULLTIME',
+      job_employment_type: 'CONTRACT',
       job_title: 'Software Engineer',
       job_apply_link:
         'https://careers.google.com/jobs/results/123456789/software-engineer/',
@@ -163,5 +163,12 @@ export class JobService {
       .subscribe((response: any) => {
         this.jobs = response.data;
       });
+  }
+
+  validateJob() {
+    return this.httpClient.get(`https://jsonplaceholder.typicode.com/todos/1`)
+      .subscribe((response: any) => {
+        return response.id === 1
+      })
   }
 }

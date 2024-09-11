@@ -11,6 +11,7 @@
   </mat-card-header>
   <mat-card-content>
     <article class="job-text">
+      <!-- <p>{{ job.job_id | jobStatus }}</p> -->
       <span>Required education: {{ job.job_required_education }}</span>
       <span>Benefits: {{ job.job_benefits }}</span>
     </article>
@@ -18,25 +19,33 @@
 
   <mat-card-footer>
     <mat-card-actions class="card-button-wrapper">
-
       <div>
         <button mat-button (click)="onVisit(job.job_apply_link)">
           Visit Link
         </button>
 
-        @if (jobService.checkIfJobIsLiked(job.job_id)) {
+        <!-- @if (jobService.checkIfJobIsLiked(job.job_id)) {
         <button mat-button (click)="jobService.dislikeJob(job)">
           Remove From Liked
         </button>
         } @else {
         <button mat-button (click)="jobService.likeJob(job)">Like Job</button>
-        }
+        } -->
+
+        <button
+          mat-button
+          (click)="
+            jobService.checkIfJobIsLiked(job.job_id)
+              ? jobService.dislikeJob(job)
+              : jobService.likeJob(job)
+          "
+        >
+          {{ job.job_id | jobStatus }}
+        </button>
       </div>
-      
+
       <button mat-button class="view-details-button">
-        <a [routerLink]="getDetailsLink(job.job_id)">
-          View Details
-        </a>
+        <a [routerLink]="getDetailsLink(job.job_id)"> View Details </a>
       </button>
     </mat-card-actions>
   </mat-card-footer>
