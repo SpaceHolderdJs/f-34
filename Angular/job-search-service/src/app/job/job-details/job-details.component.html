@@ -3,5 +3,24 @@
 } @else {
     <div class="wrapper">
         <h4>{{ job.job_job_title }}</h4>
+        <p>Job date: {{ jobDate | date }}</p>
+        <p>Job short date: {{ jobDate | date:'fullDate' }}</p>
+        <p>Job hire date: {{ job.job_posted_at_datetime_utc | date:'fullDate' }}</p>
+
+        <p>{{ job.job_city | uppercase }}</p>
+        <p>{{ "HELLO WORLD" | lowercase }}</p>
+        <p>{{"igor sergienko" | titlecase }}</p>
+        <p>{{ 0.89 | percent }}</p>
+        <p>{{"Hello" | slice:3:5 }}</p>
+
+        <pre>
+            {{job | json}}
+        </pre>
+
+        <p>{{ promise | async }}</p>
+
+        <p>{{ [1,2,3,4,5,6,7,8,9] | odd }}</p>
+
+        <p>{{[100, 4, 5, 6, 1, 90] | max }}</p>
     </div>
 }
