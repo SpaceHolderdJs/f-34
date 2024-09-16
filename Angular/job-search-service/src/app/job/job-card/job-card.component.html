@@ -6,13 +6,17 @@
       <mat-card-subtitle
         >{{ job.job_min_salary }}$ - {{ job.job_max_salary }}</mat-card-subtitle
       >
-      <img mat-card-sm-image [src]="job.employer_logo" class="job-image" />
+      <img
+        mat-card-sm-image
+        [src]="job.employer_logo || defaultJobImageUrl"
+        class="job-image"
+      />
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
     <article class="job-text">
       <!-- <p>{{ job.job_id | jobStatus }}</p> -->
-      <span>Required education: {{ job.job_required_education }}</span>
+      <span>Job publisher: {{ job.job_publisher }}</span>
       <span>Benefits: {{ job.job_benefits }}</span>
     </article>
   </mat-card-content>
@@ -42,6 +46,8 @@
         >
           {{ job.job_id | jobStatus }}
         </button>
+
+        <span>{{ jobService.jobs | highestJobRate : job.job_id }}</span>
       </div>
 
       <button mat-button class="view-details-button">
