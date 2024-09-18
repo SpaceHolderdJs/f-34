@@ -1,14 +1,12 @@
-
 import "./App.css";
+import { Cars } from "./components/Cars";
+import { Counter } from "./components/Counter";
 
-function App() {
-  const name = "Igor";
-
+export const App = () => {
   return (
     <div>
-      <h1>Hello, {name}</h1>
+      <Counter />
+      <Cars />
     </div>
   );
-}
-
-export default App;
+};

@@ -1,0 +1,13 @@
+.cars-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cars-wrapper .car-card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    background: #3b3939;
+}
