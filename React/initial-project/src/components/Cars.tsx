@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { CarCard } from "./CarCard";
 
 import "../styles/Cars.css";
-import { CarCard } from "./CarCard";
 
 export const Cars = () => {
   // static info
@@ -10,9 +10,8 @@ export const Cars = () => {
   // dynamic info
   const [cars, setCars] = useState<string[]>([]);
 
-  const addCar = () => {
-    const randomCar = allCars[Math.floor(Math.random() * allCars.length)];
-    setCars([...cars, randomCar]);
+  const addCar = (car: string) => {
+    setCars([...cars, car]);
   };
 
   const removeCar = (car: string) => {
@@ -27,10 +26,20 @@ export const Cars = () => {
       <h1>Cars</h1>
 
       {cars.map((car, i) => (
-        <CarCard key={`${car}-${i}`} car={car} index={i} removeCar={removeCar} />
+        <CarCard
+          key={`${car}-${i}`}
+          car={car}
+          index={i}
+          removeCar={removeCar}
+        />
       ))}
 
-      <button onClick={addCar}>Add New Car</button>
+      <div style={{ display: "flex" }}>
+        {allCars.map((car) => (
+          <button key={car} onClick={() => addCar(car)}>{car}</button>
+        ))}
+      </div>
+
       <button onClick={clearCars}>Clear Cars</button>
     </div>
   );

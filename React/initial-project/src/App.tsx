@@ -1,12 +1,15 @@
+import { Link } from "react-router-dom";
 import "./App.css";
-import { Cars } from "./components/Cars";
-import { Counter } from "./components/Counter";
+import { router } from "./router";
 
 export const App = () => {
   return (
-    <div>
-      <Counter />
-      <Cars />
+    <div className="App">
+      {router.routes.map((route) => (
+        <Link key={route.path} to={route.path || "/"}>
+          {route.path === "/" ? "app" : route.path?.replace("/", "")}
+        </Link>
+      ))}
     </div>
   );
 };
