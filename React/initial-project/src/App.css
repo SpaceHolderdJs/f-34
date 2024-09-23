@@ -33,6 +33,12 @@
   }
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .card {
   padding: 2em;
 }
