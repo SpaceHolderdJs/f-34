@@ -1,23 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../contexts/AppContext";
 
 export const Counter = () => {
-  const [counter, setCounter] = useState<number>(0);
-
-  const increase = () => {
-    setCounter(counter + 1);
-  };
-
-  const decrease = () => {
-    setCounter(counter - 1);
-  };
-
-  const reset = () => {
-    setCounter(0);
-  }
-
-  // Додати функцію онулення counter та кнопку Reset
-  // Кнопка має дати counter значення 0  
-
+  const { counter, increase, decrease, reset } = useContext(AppContext);
+ 
   return (
     <div>
       <h1>{counter}</h1>
