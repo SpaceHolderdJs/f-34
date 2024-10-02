@@ -7,7 +7,7 @@ export const useWeather = () => {
     const getByCityName = useCallback(async (city: string) => {
         try {
             const { data } = await API.get(`weather`, {
-                params: { q: city, appid: API_KEY },
+                params: { q: city, units: "metric", appid: API_KEY },
             });
             return data;
         } catch (err) {

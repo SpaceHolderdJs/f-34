@@ -1,13 +1,14 @@
-import { useEffect } from "react";
-import { useWeather } from "../../../hooks/useWeather";
+import { Header } from "../../ui/common/Header";
+import { Layout } from "../../ui/common/Layout";
 import "./Home.css";
 
 export const Home = () => {
-    const {getByCityName} = useWeather();
-
-    useEffect(() => {
-        getByCityName("Kyiv").then((res) => console.log(res));
-    }, [])
-
-  return <div>Home</div>;
+  return (
+    <div>
+      <Header />
+      <Layout>
+        
+      </Layout>
+    </div>
+  );
 };
