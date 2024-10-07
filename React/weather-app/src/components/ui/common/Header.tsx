@@ -5,7 +5,7 @@ export const Header = () => {
   const links = [
     { title: "Search", link: "/search-weather" },
     { title: "History", link: "/" },
-    { title: "Forecast", link: "/" },
+    { title: "Forecast", link: "/forecast" },
   ];
 
   return (

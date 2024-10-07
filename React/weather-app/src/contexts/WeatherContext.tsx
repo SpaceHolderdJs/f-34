@@ -6,11 +6,16 @@ import {
   useState,
 } from "react";
 import { TodayWeatherDataType } from "../types/todayWeatherData";
+import { ForecastWeatherDataType } from "../types/forecastWeatherDataType";
 
 type WeatherContextType = {
   weatherToday?: TodayWeatherDataType;
   setWeatherData: (data: TodayWeatherDataType) => void;
   resetWeatherData: () => void;
+
+  forecastWeather?: ForecastWeatherDataType;
+  setForecastWeatherData: (data: ForecastWeatherDataType) => void;
+  resetForecastWeatherData: () => void;
 };
 
 export const WeatherContext = createContext<WeatherContextType | null>(null);
@@ -20,6 +25,8 @@ export const WeatherContextProvider: FC<PropsWithChildren> = ({ children }) => {
     TodayWeatherDataType | undefined
   >();
 
+  const [forecastData, setForecastData ] = useState<ForecastWeatherDataType | undefined>();
+
   const setWeatherToday = useCallback((data: TodayWeatherDataType) => {
     setTodayWeatherData(data);
   }, []);
@@ -28,12 +35,24 @@ export const WeatherContextProvider: FC<PropsWithChildren> = ({ children }) => {
     setTodayWeatherData(undefined);
   }, []);
 
+  const setForecastWeatherData = useCallback((data: ForecastWeatherDataType) => {
+    setForecastData(data);
+  }, []);
+
+  const resetForecastWeatherData = useCallback(() => {
+    setForecastData(undefined);
+  }, []);
+
   return (
     <WeatherContext.Provider
       value={{
         weatherToday: todayWeatherData,
         setWeatherData: setWeatherToday,
-        resetWeatherData: resetWeatherData
+        resetWeatherData: resetWeatherData,
+
+        forecastWeather: forecastData,
+        setForecastWeatherData,
+        resetForecastWeatherData
       }}
     >
       {children}
