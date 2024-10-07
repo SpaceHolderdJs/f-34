@@ -7,7 +7,11 @@ export const WeatherDetails = () => {
 
   if (!weatherToday) return null;
 
-  return <div className="w-max flex flex-row">
-    <WeatherCard weather={weatherToday} />
+  const onLikeWeatherLocation = () => {
+    alert("Add your code here");
+  }
+
+  return <div className="w-max flex flex-row m-5">
+    <WeatherCard weather={weatherToday} action={onLikeWeatherLocation} />
   </div>;
 };

@@ -1,12 +1,18 @@
-import { Card, Table } from "flowbite-react";
-import { TodayWeatherDataType } from "../../../types/todayWeatherData";
 import { FC } from "react";
+import { Button, Card, Table } from "flowbite-react";
+import { TodayWeatherDataType } from "../../../types/todayWeatherData";
+import { ForecastListItemWeatherType } from "../../../types/forecastWeatherDataType";
+import { FaHeart } from "react-icons/fa";
 
 type Props = {
-  weather: TodayWeatherDataType;
+  title?: string;
+  weather:
+    | TodayWeatherDataType
+    | (ForecastListItemWeatherType & { name: string });
+  action?: () => void;
 };
 
-export const WeatherCard: FC<Props> = ({ weather }) => {
+export const WeatherCard: FC<Props> = ({ weather, title, action }) => {
   const {
     main: { temp, temp_min, temp_max },
     wind: { speed },
@@ -16,18 +22,21 @@ export const WeatherCard: FC<Props> = ({ weather }) => {
 
   return (
     <Card
-      className="max-w-md m-5"
+      className="max-w-md"
       renderImage={() => (
-        <img
-          className="object-contain w-full max-h-[200px]"
-          alt={name}
-          src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-        />
+        <div className="flex flex-col items-center pt-2">
+          {title && <h2>{title}</h2>}
+          <img
+            className="object-contain w-full max-h-[200px]"
+            alt={name}
+            src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+          />
+        </div>
       )}
     >
       <div className="flex flex-row justify-between items-center">
         <article>
-          <h3 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {name}
           </h3>
 
@@ -53,6 +62,12 @@ export const WeatherCard: FC<Props> = ({ weather }) => {
           </Table.Row>
         </Table.Body>
       </Table>
+
+      {action && (
+        <Button onClick={action}>
+          <FaHeart />
+        </Button>
+      )}
     </Card>
   );
 };

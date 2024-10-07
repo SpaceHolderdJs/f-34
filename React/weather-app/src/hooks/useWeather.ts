@@ -16,5 +16,18 @@ export const useWeather = () => {
         }
     }, []);
 
-    return { getByCityName };
+    const getWeatherForecast = async (lat: string, lon: string) => {
+        try {
+            const { data } = await API.get(`forecast`, {
+                params: { lat, lon, units: "metric", appid: API_KEY },
+            });
+
+            return data;
+        } catch (err) {
+            console.log(err);
+            return null;
+        }
+    };
+
+    return { getByCityName, getWeatherForecast };
 };
