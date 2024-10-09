@@ -46,3 +46,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.bottom-section {
+  margin-top: 150vh;
+  width: 100%;
+}
